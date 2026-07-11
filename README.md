@@ -1,5 +1,7 @@
 <img width="1191" height="743" alt="image" src="https://github.com/user-attachments/assets/1fb36611-f17a-4f5e-8f03-655dee137bc5" />
 
+****Xin hãy lưu ý: Tôi sử dụng claude kết hợp với IDA để phân tích...****
+
 Vì đây là sửa trực tiếp vào một binary đang được Xgpro dùng để lập trình chip thật — sai sót có thể làm hỏng file, crash Xgpro, hoặc tệ hơn là ghi sai tham số vào chip thật.
 
 Vài giới hạn quan trọng phát hiện được khi phân tích:
@@ -9,7 +11,7 @@ Vài giới hạn quan trọng phát hiện được khi phân tích:
 3. **Thêm hẳn 1 family (hãng chip) mới** → **không an toàn** nếu chỉ sửa data — con số `173` (tổng số family) bị hard-code cứng ngay trong code máy đã biên dịch của cả 5 hàm export (`GetDllInfo`, `GetIcMFC`...), không phải đọc từ biến. Muốn thêm family thật sự cần vá luôn code máy (patch instruction), rủi ro cao hơn hẳn.
 4. Nhiều byte cuối mỗi record (ví dụ offset 0x5C–0x67, và sau offset 108) tôi **chưa giải mã được ý nghĩa** — có thể là tham số thuật toán/điện áp quan trọng. Nếu sửa nhầm những byte này có thể khiến Xgpro ghi sai vào chip thật.
 
-Tôi cần bạn quyết định 2 điều trước khi code:Kết quả test hoàn hảo (528→528 entries, edit/delete/clone-add đều đúng, family khác không đổi 1 byte). Giờ kiểm tra bước quan trọng nhất: **file đã sửa có còn load được như DLL thật không**.Đã build xong và test trên bản sao thật của `InfoIC2Plus.dll` (không đụng file gốc). 3 file, để cùng thư mục:
+Kết quả test hoàn hảo (528→528 entries, edit/delete/clone-add đều đúng, family khác không đổi 1 byte). Giờ kiểm tra bước quan trọng nhất: **file đã sửa có còn load được như DLL thật không**.Đã build xong và test trên bản sao thật của `InfoIC2Plus.dll` (không đụng file gốc). 3 file, để cùng thư mục:
 
 - **`infoic2plus_lib.py`** — thư viện lõi (bắt buộc phải có, hai file dưới đều import từ đây)
 - **`edit_infoic2plus_cli.py`** — công cụ dòng lệnh
