@@ -52,3 +52,15 @@ Mỗi lần chạy ra 2 file: `<prefix>.header.json` (metadata + kết quả ver
 Đã verify bằng cách chạy lại chính xác thuật toán trong script trực tiếp trên 3 file thật:
 - `updateII.dat`: magic khớp, kích thước file khớp công thức (`1036 + 936×272 + 2064 = 257692`), toàn bộ 936 block CRC + block cuối CRC + CRC toàn file đều khớp 100%.
 - `updateT48.dat` / `updateT56.dat`: magic khớp, kích thước khớp block_count trong header (942 và 168 block tương ứng).
+
+
+D:\Xgpro>python extract_fw_update.py updateII.dat
+Device        : TL866-II Plus
+Magic         : 0xF8CC4284
+File CRC32 OK : True (stored=0x4FA3C931 computed=0x4FA3C931)
+Bad block CRCs: none
+Final block CRC OK: True
+Firmware blob : 241664 bytes -> fw_extracted.firmware.bin
+Header/meta   : fw_extracted.header.json
+
+D:\Xgpro>
