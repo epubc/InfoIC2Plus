@@ -1,3 +1,5 @@
+<img width="1191" height="743" alt="image" src="https://github.com/user-attachments/assets/1fb36611-f17a-4f5e-8f03-655dee137bc5" />
+
 Vì đây là sửa trực tiếp vào một binary đang được Xgpro dùng để lập trình chip thật — sai sót có thể làm hỏng file, crash Xgpro, hoặc tệ hơn là ghi sai tham số vào chip thật.
 
 Vài giới hạn quan trọng phát hiện được khi phân tích:
